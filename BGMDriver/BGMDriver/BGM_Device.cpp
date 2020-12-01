@@ -20,6 +20,7 @@
 //  Copyright © 2016, 2017, 2019 Kyle Neideck
 //  Copyright © 2017 Andrew Tonner
 //  Copyright © 2019 Gordon Childs
+//  Copyright © 2020 Aleksey Yurkevich
 //  Copyright (C) 2013 Apple Inc. All Rights Reserved.
 //
 //  Based largely on SA_Device.cpp from Apple's SimpleAudioDriver Plug-In sample code. Also uses a few sections from Apple's
@@ -1206,6 +1207,7 @@ void	BGM_Device::StartIO(UInt32 inClientID)
     // frames or increase latency.
     if(!clientIsBGMApp && bgmAppHasClientRegistered)
     {
+        DebugMsg("BGM_Device::StartIO: StartBGMAppPlayThroughSync.");
         UInt64 theXPCError = StartBGMAppPlayThroughSync(GetObjectID() == kObjectID_Device_UI_Sounds);
         
         switch(theXPCError)
@@ -1217,9 +1219,15 @@ void	BGM_Device::StartIO(UInt32 inClientID)
             case kBGMXPC_MessageFailure:
                 // This most likely means BGMXPCHelper isn't installed or has crashed. IO will probably still work,
                 // but we may drop frames while the audio hardware starts up.
-                LogError("BGM_Device::StartIO: Couldn't reach BGMApp via XPC. Attempting to start IO anyway.");
+                LogWarning("BGM_Device::StartIO: Couldn't reach BGMApp via XPC. Attempting to start IO anyway.");
                 break;
-                
+                       
+           case kBGMXPC_Timeout:
+               // XPC timeout. IO will probably still work,
+               // but we may drop frames while the audio hardware starts up.
+               LogWarning("BGM_Device::StartIO: Couldn't reach BGMApp via XPC (timeout). Attempting to start IO anyway.");
+               break;
+
             case kBGMXPC_ReturningEarlyError:
                 // This can (and might always) happen when the user changes output device in BGMApp while IO is running.
                 // See BGMAudioDeviceManager::startPlayThroughSync and BGMPlayThrough::WaitForOutputDeviceToStart.
@@ -1227,8 +1235,9 @@ void	BGM_Device::StartIO(UInt32 inClientID)
                 break;
                 
             default:
+                DebugMsg("BGM_Device::StartIO: BGMApp failed to start the output device. theXPCError=%llu", theXPCError);
                 LogError("BGM_Device::StartIO: BGMApp failed to start the output device. theXPCError=%llu", theXPCError);
-                Throw(CAException(kAudioHardwareNotRunningError));
+                //Throw(CAException(kAudioHardwareNotRunningError));
         }
     }
 }

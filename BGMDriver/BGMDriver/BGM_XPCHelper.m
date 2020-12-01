@@ -14,10 +14,11 @@
 // along with Background Music. If not, see <http://www.gnu.org/licenses/>.
 
 //
-//  BGM_XPCHelper.cpp
+//  BGM_XPCHelper.m
 //  BGMDriver
 //
-//  Copyright © 2016, 2017 Kyle Neideck
+//  Copyright © 2016, 2017, 2020 Kyle Neideck
+//  Copyright © 2020 Aleksey Yurkevich
 //
 
 // Self Include
