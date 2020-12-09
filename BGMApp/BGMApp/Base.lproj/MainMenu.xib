@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -31,47 +31,47 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu id="8AN-nh-rEe" userLabel="BGM Menu">
             <items>
-                <menuItem title="Auto-pause Music" tag="2" id="nHv-T8-1nb">
+                <menuItem title="Аутоматско паузирање музике" tag="2" id="nHv-T8-1nb">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <accessibility help="Enable to automatically pause your selected music player when a different app starts playing audio." identifier="Auto-pause enabled"/>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="ZGd-Pq-YeA"/>
-                <menuItem title="Volumes" tag="3" enabled="NO" id="8PP-wA-Pae">
+                <menuItem title="Јачина звука" tag="3" enabled="NO" id="8PP-wA-Pae">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" tag="4" id="rkf-nx-H2J"/>
-                <menuItem title="Output Device" tag="5" enabled="NO" id="chk-9C-pab">
+                <menuItem title="Излазни уређаји" tag="5" enabled="NO" id="chk-9C-pab">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="D3z-zv-JrJ"/>
-                <menuItem title="Preferences" tag="1" id="BHb-uh-9Zm">
+                <menuItem title="Подешавања" tag="1" id="BHb-uh-9Zm">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Preferences" id="Img-Dh-cpU">
+                    <menu key="submenu" title="Подешавања" id="Img-Dh-cpU">
                         <items>
-                            <menuItem title="Auto-pause" tag="1" enabled="NO" id="2aT-t7-HGW">
+                            <menuItem title="Аутоматско паузирање" tag="1" enabled="NO" id="2aT-t7-HGW">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="nb1-jq-97L"/>
-                            <menuItem title="Status Bar Icon" enabled="NO" id="CmD-ot-1wE">
+                            <menuItem title="Status Bar икона" enabled="NO" id="CmD-ot-1wE">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                             </menuItem>
-                            <menuItem title="Background Music Logo" state="on" tag="2" id="9VF-qy-6fh">
+                            <menuItem title="Background Music Лого" state="on" tag="2" id="9VF-qy-6fh">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                             </menuItem>
-                            <menuItem title="Volume Icon" tag="3" id="B47-O2-wd0">
+                            <menuItem title="Икона звука" tag="3" id="B47-O2-wd0">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="pYP-Fy-nKA"/>
-                            <menuItem title="About Background Music" tag="4" id="R45-Vo-Eto">
+                            <menuItem title="О програму Background Music" tag="4" id="R45-Vo-Eto">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                             </menuItem>
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Debug Logging" hidden="YES" toolTip="Log detailed messages to help diagnose bugs. Search for &quot;bgm&quot; or &quot;background music&quot; in Console.app." id="sc9-vO-KyP">
+                <menuItem title="Дибагирај логовање" hidden="YES" toolTip="Log detailed messages to help diagnose bugs. Search for &quot;bgm&quot; or &quot;background music&quot; in Console.app." id="sc9-vO-KyP">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="Quit Background Music" id="Nj2-gJ-DhW">
+                <menuItem title="Искључи Background Music" id="Nj2-gJ-DhW">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="terminate:" target="-1" id="seH-Fc-tXb"/>
@@ -152,7 +152,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES"/>
             <windowPositionMask key="initialPositionMask" topStrut="YES"/>
             <rect key="contentRect" x="248" y="350" width="1002" height="335"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
             <view key="contentView" id="HlB-hX-Y0Y">
                 <rect key="frame" x="0.0" y="0.0" width="1002" height="335"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -216,16 +216,16 @@
                     <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqz-ap-PAC">
                         <rect key="frame" x="415" y="45" width="567" height="245"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="Cdb-RA-YK0">
-                            <rect key="frame" x="1" y="1" width="565" height="243"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <clipView key="contentView" drawsBackground="NO" id="Cdb-RA-YK0">
+                            <rect key="frame" x="1" y="1" width="550" height="243"/>
+                            <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <textView ambiguous="YES" editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" id="LSG-PF-cl8">
-                                    <rect key="frame" x="-6" y="0.0" width="577" height="243"/>
+                                <textView editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" id="LSG-PF-cl8">
+                                    <rect key="frame" x="-6" y="0.0" width="562" height="243"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    <size key="minSize" width="565" height="243"/>
+                                    <size key="minSize" width="550" height="243"/>
                                     <size key="maxSize" width="594" height="10000000"/>
                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <allowedInputSourceLocales>
@@ -239,7 +239,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="qCC-lY-zQ6">
-                            <rect key="frame" x="550" y="1" width="16" height="243"/>
+                            <rect key="frame" x="551" y="1" width="15" height="243"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
